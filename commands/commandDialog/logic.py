@@ -125,10 +125,6 @@ class CommandLogic:
                                 skt.sketchCurves.sketchLines.addByTwoPoints(point1, point2)
                         remaining_points.remove(point2)
         
-        # Add fillets to corners where lines meet
-        if join_type == 'Fill':
-            self.add_fillets_to_corners(skt, 0.1)
-        
         if manual_accept:
             self.accept_connections(connections_to_accept, join_type)
 
@@ -344,9 +340,6 @@ function cancelWindow() {
                     geomConstraints.addCoincident(point1, point2)
                 except RuntimeError as e:
                     self.ui.messageBox(f'Failed to connect points: {e}')
-        
-        # Add fillets to corners
-        self.add_fillets_to_corners(skt, 0.1)
 
     def add_fillets_to_corners(self, sketch, fillet_radius):
         """Add fillets to points where lines meet"""
