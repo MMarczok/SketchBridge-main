@@ -9,8 +9,8 @@ ui = app.userInterface
 logic = CommandLogic(app)
 
 CMD_ID = f'{config.COMPANY_NAME}_{config.ADDIN_NAME}_cmdDivvalog'
-CMD_NAME = 'Command Dialog Sample'
-CMD_Description = 'A Fusion 360 Add-in Command with a dialog'
+CMD_NAME = 'uzyj wtyczki'
+CMD_Description = ''
 IS_PROMOTED = True
 WORKSPACE_ID = 'FusionSolidEnvironment'
 PANEL_ID = 'SketchPanel'
