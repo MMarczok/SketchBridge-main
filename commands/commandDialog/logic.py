@@ -341,29 +341,3 @@ function cancelWindow() {
                 except RuntimeError as e:
                     self.ui.messageBox(f'Failed to connect points: {e}')
 
-    def add_fillets_to_corners(self, sketch, fillet_radius):
-        """Add fillets to points where lines meet"""
-        try:
-            # Find all sketch points
-            for point in sketch.sketchPoints:
-                # Count how many curves are connected to this point
-                connected_curves = 0
-                for curve in sketch.sketchCurves:
-                    if hasattr(curve, 'startSketchPoint') and hasattr(curve, 'endSketchPoint'):
-                        if curve.startSketchPoint == point or curve.endSketchPoint == point:
-                            connected_curves += 1
-                
-                # If 2 or more curves meet at this point, add fillet
-                if connected_curves >= 2:
-                    try:
-                        # Add fillet constraint at this point
-                        constraints = sketch.geometricConstraints
-                        if hasattr(constraints, 'addFillet'):
-                            constraints.addFillet(point, fillet_radius)
-                    except:
-                        # If fillet fails, continue (might already have one)
-                        pass
-        except Exception as e:
-            # Silently continue if fillets don't work
-            pass
-
