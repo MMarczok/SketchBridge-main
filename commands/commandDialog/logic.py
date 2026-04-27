@@ -191,7 +191,7 @@ class CommandLogic:
             # Creating palette
             self.palette = self.ui.palettes.itemById(self.PALETTE_ID)
             if not self.palette: 
-                self.palette = self.ui.palettes.add(self.PALETTE_ID, 'SketchBridge Help', self.PALETTE_URL, False, True, True, 600, 500, True)
+                self.palette = self.ui.palettes.add(self.PALETTE_ID, 'wtyczka Help', self.PALETTE_URL, False, True, True, 600, 500, True)
                 #self.palette.setPosition(800, 400)
                 self.palette.isVisible = True
                 futil.add_handler(self.palette.closed, self.palette_closed)
@@ -264,7 +264,7 @@ class CommandLogic:
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SketchBridge Connections</title>
+<title>wtyczka Connections</title>
 <style>
 body { font-family: Arial, sans-serif; padding: 15px; margin: 0; background: white; }
 h3 { margin-top: 0; color: #333; }
